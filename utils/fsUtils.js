@@ -1,7 +1,7 @@
 const fs = require('fs');
 const util = require('util');
 
-// Promise version of fs.readFile
+
 const readFromFile = util.promisify(fs.readFile);
 
 /**
@@ -42,10 +42,7 @@ const readAndDelete = (file, id) => {
 
       const parsedData = JSON.parse(data)
 
-     
-
         const filteredData = parsedData.filter((note) => note.id !== id);
-        // console.log("filter", typeof filteredData)
  
       writeToFile(file, filteredData);
     }
